@@ -14,7 +14,9 @@ import menu_open_icon from "../images/Icons/Navbar_icons/menu-open.svg";
 const NavigationBar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   function openCloseMenu() {
+    const body = document.body;
     setToggleMenu(!toggleMenu);
+    body.classList.toggle("overflow-hidden", !toggleMenu); //Diseble Scrolling in mobile navbar is ON.
   }
   return (
     <div className="navbar">

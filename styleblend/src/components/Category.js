@@ -44,7 +44,10 @@ const Category = () => {
       {/* Categorys */}
       <div className="justify-start items-start gap-6 grid grid-cols-3  md:grid-cols-6">
         {CategoryItems.map((Cat_item) => (
-          <div className="flex-col justify-start items-start gap-3 inline-flex">
+          <div
+            className="flex-col justify-start items-start gap-3 inline-flex"
+            key={Cat_item.title}
+          >
             <div className="w-24 h-24 md:w-28 md:h-28 rounded-full justify-center items-center inline-flex overflow-hidden">
               <img className="w-28 h-28" src={Cat_item.Image} alt="" />
             </div>

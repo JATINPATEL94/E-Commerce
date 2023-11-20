@@ -1,25 +1,26 @@
 import React from "react";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import Footer from "./components/Footer";
 import NavigationBar from "./components/NavigationBar";
 import NotificationBar from "./components/NotificationBar";
-import Slider from "./components/Slider";
-import Brands from "./components/Brands";
-import ProductCarousel from "./components/ProductCarousel";
 import Values from "./components/Values";
-import Category from "./components/Category";
+import Home from "./components/Home";
+import Shop from "./components/Shop";
 
 function App() {
   return (
-    <div className="font-sans overflow-x-hidden">
-      <NotificationBar />
-      <NavigationBar />
-      <Slider />
-      <Brands />
-      <ProductCarousel />
-      <Category />
-      <Values />
-      <Footer />
-    </div>
+    <Router>
+      <div className="font-sans overflow-x-hidden">
+        <NotificationBar />
+        <NavigationBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/shop" element={<Shop />} />
+        </Routes>
+        <Values />
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

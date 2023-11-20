@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import close_icon from "../images/Icons/close.svg";
 import search_icon from "../images/Icons/Navbar_icons/search.svg";
 import user_icon from "../images/Icons/Navbar_icons/user-circle.svg";
@@ -39,30 +40,30 @@ const NavigationBar = () => {
             <span className="text-zinc-500 lg:pl-30"></span>
           </span>
           <div className="w-full flex justify-center align-middle gap-5 lg:gap-10">
-            <a
-              href="/home"
+            <Link
+              to="/"
               className="hidden md:block  text-neutral-900 text-sm font-medium font-space-grotesk leading-normal"
             >
               Home
-            </a>
-            <a
-              href="/shop"
+            </Link>
+            <Link
+              to="/shop"
               className="hidden md:block  text-zinc-500 text-sm font-medium font-space-grotesk leading-normal"
             >
               Shop
-            </a>
-            <a
-              href="/product"
+            </Link>
+            <Link
+              to="/product"
               className="hidden md:block  text-zinc-500 text-sm font-medium font-space-grotesk leading-normal"
             >
               Product
-            </a>
-            <a
-              href="/contactus"
+            </Link>
+            <Link
+              to="/contactus"
               className="hidden md:block  text-zinc-500 text-sm font-medium font-space-grotesk leading-normal"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
         {/* Desktop icons */}
@@ -127,36 +128,48 @@ const NavigationBar = () => {
               </div>
             </div>
           </div>
-          {/* menu-bar for Mobile */}
+          {/* menu-bar Links for Mobile */}
           <div className="flex-col justify-start items-start gap-4 flex">
             <div className="h-10 pb-2 border-b border-gray-200 flex-col justify-start items-start gap-2.5 flex">
               <div className="pb-2 justify-end items-center inline-flex">
-                <div className="w-[303px] text-neutral-900 text-sm font-medium font-['Inter'] leading-normal">
+                <Link
+                  to="/"
+                  className="w-[303px] text-neutral-900 text-sm font-medium font-['Inter'] leading-normal"
+                >
                   Home
-                </div>
+                </Link>
               </div>
             </div>
             <div className="h-10 pb-2 border-b border-gray-200 flex-col justify-start items-start gap-2.5 flex">
               <div className="w-[295px] h-8 relative">
-                <div className="w-[303px] left-0 top-0 absolute text-neutral-900 text-sm font-medium font-['Inter'] leading-normal">
+                <Link
+                  to="shop"
+                  className="w-[303px] left-0 top-0 absolute text-neutral-900 text-sm font-medium font-['Inter'] leading-normal"
+                >
                   Shop
-                </div>
+                </Link>
                 <div className="w-6 h-6 left-[271px] top-[4px] absolute" />
               </div>
             </div>
             <div className="h-10 pb-2 border-b border-gray-200 flex-col justify-start items-start gap-2.5 flex">
               <div className="w-[295px] h-8 relative">
-                <div className="w-[303px] left-0 top-0 absolute text-neutral-900 text-sm font-medium font-['Inter'] leading-normal">
+                <Link
+                  to="product"
+                  className="w-[303px] left-0 top-0 absolute text-neutral-900 text-sm font-medium font-['Inter'] leading-normal"
+                >
                   Product
-                </div>
+                </Link>
                 <div className="w-6 h-6 left-[271px] top-[4px] absolute" />
               </div>
             </div>
             <div className="h-10 pb-2 border-b border-gray-200 flex-col justify-start items-start gap-2.5 flex">
               <div className="pb-2 justify-end items-center inline-flex">
-                <div className="w-[303px] text-neutral-900 text-sm font-medium font-['Inter'] leading-normal">
+                <Link
+                  to="contactus"
+                  className="w-[303px] text-neutral-900 text-sm font-medium font-['Inter'] leading-normal"
+                >
                   Contact Us
-                </div>
+                </Link>
               </div>
             </div>
           </div>

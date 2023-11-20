@@ -83,7 +83,7 @@ const ProductCarousel = () => {
       {/* products */}
       <div className="w-full h-fit justify-start items-start gap-6 inline-flex overflow-x-auto">
         {products.map((product) => {
-          return <ProductCard product={product} />;
+          return <ProductCard product={product} key={product.name}/>;
         })}
       </div>
     </div>

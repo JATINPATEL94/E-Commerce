@@ -43,17 +43,17 @@ const Slider = () => {
 
       <div className="w-full h-fit flex-col md:flex-row justify-between items-center gap-4 flex">
         <div className="w-full">
-          <span class="text-neutral-900 text-5xl lg:text-6xl font-medium font-poppins">
+          <span className="text-neutral-900 text-5xl lg:text-6xl font-medium font-poppins">
             Simply Unique
           </span>
-          <span class="text-zinc-500 text-5xl  lg:text-6xl font-medium font-poppins">
+          <span className="text-zinc-500 text-5xl  lg:text-6xl font-medium font-poppins">
             /
           </span>
           <br />
-          <span class="text-neutral-900 text-5xl lg:text-6xl font-medium font-poppins ">
+          <span className="text-neutral-900 text-5xl lg:text-6xl font-medium font-poppins ">
             Simply Better
           </span>
-          <span class="text-zinc-500 text-5xl  lg:text-6xl font-medium font-poppins ">
+          <span className="text-zinc-500 text-5xl  lg:text-6xl font-medium font-poppins ">
             .
           </span>
         </div>

@@ -3,6 +3,7 @@ import right_arrow_icon from "../images/Icons/Slider_icons/Button-1.png";
 import ProductCard from "./ProductCard";
 
 const ProductCarousel = () => {
+  const detailsView = true;
   const products = [
     {
       name: "Men's Diamond Quilted Bomber Hoody",
@@ -83,7 +84,13 @@ const ProductCarousel = () => {
       {/* products */}
       <div className="w-full h-fit justify-start items-start gap-6 inline-flex overflow-x-auto">
         {products.map((product) => {
-          return <ProductCard product={product} key={product.name}/>;
+          return (
+            <ProductCard
+              product={product}
+              detailsView={detailsView}
+              key={product.name}
+            />
+          );
         })}
       </div>
     </div>

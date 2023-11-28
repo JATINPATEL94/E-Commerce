@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import close_icon from "../images/Icons/close.svg";
 import search_icon from "../images/Icons/Navbar_icons/search.svg";
 import user_icon from "../images/Icons/Navbar_icons/user-circle.svg";
@@ -11,14 +11,23 @@ import instagram_icon from "../images/Icons/Navbar_icons/instagram.svg";
 import facebook_icon from "../images/Icons/Navbar_icons/facebook.svg";
 import youtube_icon from "../images/Icons/Navbar_icons/youtube.svg";
 import menu_open_icon from "../images/Icons/Navbar_icons/menu-open.svg";
+import OrderSummary from "./OrderSummary";
 
 const NavigationBar = () => {
+  const navigate = useNavigate();
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [toggleOderSummary, setToggleOderSummary] = useState(false);
   function openCloseMenu() {
     const body = document.body;
     setToggleMenu(!toggleMenu);
     body.classList.toggle("overflow-hidden", !toggleMenu); //Diseble Scrolling in mobile navbar is ON.
   }
+  function openCloseOderSummary() {
+    const body = document.body;
+    setToggleOderSummary(!toggleOderSummary);
+    body.classList.toggle("overflow-hidden", !toggleOderSummary); //Diseble Scrolling in mobile navbar is ON.
+  }
+
   return (
     <div className="navbar">
       {/* Desktop View */}
@@ -72,11 +81,18 @@ const NavigationBar = () => {
             <img src={search_icon} alt="Search" />
           </div>
           <div className="hidden md:block w-6 h-6 relative">
-            <img src={user_icon} alt="User" />
+            <img
+              onClick={() => {
+                navigate("/useraccount");
+              }}
+              src={user_icon}
+              alt="User"
+            />
           </div>
           <div className="w-[60px] h-7 pl-px py-0.5 justify-center items-center inline-flex">
             <img
-              className="w-6 h-6 relative flex-col justify-start items-start flex"
+              onClick={openCloseOderSummary}
+              className="w-6 h-6 relative flex-col justify-start items-start flex cursor-pointer"
               src={cart_icon}
               alt=""
             />
@@ -247,6 +263,13 @@ const NavigationBar = () => {
           </div>
         </div>
       </div>
+
+      {/* OrderSummary */}
+      {toggleOderSummary === true ? (
+        <OrderSummary openCloseOderSummary={openCloseOderSummary} />
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

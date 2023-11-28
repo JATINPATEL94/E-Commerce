@@ -6,6 +6,8 @@ import NotificationBar from "./components/NotificationBar";
 import Values from "./components/Values";
 import Home from "./components/Home";
 import Shop from "./components/Shop";
+import ProductPage from "./components/ProductPage";
+import UserAccount from "./components/UserAccount";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/product" element={<ProductPage />} />
+          <Route path="/useraccount" element={<UserAccount />} />
         </Routes>
         <Values />
         <Footer />

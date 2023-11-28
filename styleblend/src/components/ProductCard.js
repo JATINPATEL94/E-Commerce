@@ -8,7 +8,7 @@ const ProductCard = ({ product, detailsView, col_View }) => {
   return (
     <div>
       {detailsView === true ? (
-        <div className="w-full min-w-[240px] max-w-[262px] h-fit flex-col justify-center items-start gap-3 inline-flex">
+        <div className="w-full min-w-[220px] max-w-[262px] h-fit flex-col justify-center items-start gap-3 inline-flex">
           {/* top section */}
           <div className="w-full max-h-80 relative flex-col justify-start items-start flex group">
             {/* image */}
@@ -90,12 +90,12 @@ const ProductCard = ({ product, detailsView, col_View }) => {
         <div
           className={`${
             col_View === true ? "flex-col" : "flex-row"
-          } w-full min-w-[240px] h-fit p-1 justify-center items-start gap-3 inline-flex border`}
+          } w-full h-full min-w-[240px] p-1 justify-top items-start gap-3 inline-flex border`}
         >
           {/* top section */}
-          <div className="w-full h-full relative flex-col justify-center items-center align-middle flex group">
+          <div className="w-full h-full relative flex-col items-center align-middle flex group">
             {/* image */}
-            <div className="w-full  flex-col justify-center items-center inline-flex">
+            <div className="w-full h-full flex-col justify-center items-center align-middle flex">
               <img
                 className=" object-cover"
                 src={product.Image}
@@ -117,7 +117,13 @@ const ProductCard = ({ product, detailsView, col_View }) => {
             </div>
           </div>
           {/* bottom section */}
-          <div className="w-full flex-col justify-start items-start gap-1 flex">
+          <div
+            className={`${
+              col_View === true
+                ? "w-full h-full flex-col justify-start items-start gap-1 flex relative pb-10"
+                : "w-full h-full flex-col justify-start items-start gap-1 flex relative pb-10 py-4"
+            }`}
+          >
             {/* product rating */}
             <div className="w-[88px] h-4 justify-center items-start gap-0.5 inline-flex">
               {
@@ -159,11 +165,11 @@ const ProductCard = ({ product, detailsView, col_View }) => {
               </div>
             </div>
             {/* description */}
-            <div className="text-zinc-500 text-sm font-normal font-['Inter'] leading-snug">
+            <div className="mb-2 text-zinc-500 text-sm font-normal font-['Inter'] leading-snug">
               {product.description}
             </div>
             {/* Add To Cart */}
-            <div className=" w-full h-[46px]  py-2 bg-neutral-900 rounded-lg shadow bottom-0 ">
+            <div className=" w-full h-[46px] absolute py-2 bg-neutral-900 rounded-lg shadow bottom-0">
               <div className="text-center text-white text-base font-medium font-['Inter'] leading-7 cursor-pointer">
                 Add to cart
               </div>

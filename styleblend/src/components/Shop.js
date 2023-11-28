@@ -4,6 +4,10 @@ import chevron_right_icon from "../images/Icons/Shop_icons/chevron-right.png";
 import chevron_down_icon from "../images/Icons/Shop_icons/chevron-down.png";
 import { Link } from "react-router-dom";
 import ProductCard from "./ProductCard.js";
+import detail_grid_3x3l from "../images/Icons/Shop_icons/detail_grid-3x3l.png";
+import detail_grid_3x3l_filled from "../images/Icons/Shop_icons/detail_grid-3x3l-filled.png";
+import detail_grid_24 from "../images/Icons/Shop_icons/detail_grid-24.png";
+import detail_grid_24_filled from "../images/Icons/Shop_icons/detail_grid-24-filled.png";
 import grid_col_icon from "../images/Icons/Shop_icons/grid-col.png";
 import grid_col_filled_icon from "../images/Icons/Shop_icons/grid-col-filled.png";
 import grid_row_icon from "../images/Icons/Shop_icons/grid-row.png";
@@ -70,7 +74,7 @@ const Shop = () => {
       like: false,
     },
   ];
-  const [detailsView, setDetailsView] = useState(false);
+  const [detailsView, setDetailsView] = useState(true);
   const [col_View, setCol_View] = useState(true);
   return (
     <div>
@@ -157,19 +161,41 @@ const Shop = () => {
               alt="chevron-down"
             />
           </div>
-          <div className="flex border">
-            <img
-              onClick={() => setCol_View(true)}
-              className="w-7 h-7 m-1 border"
-              src={col_View === true ? grid_col_filled_icon : grid_col_icon}
-              alt="grid_cols"
-            />
-            <img
-              onClick={() => setCol_View(false)}
-              className="w-7 h-7 m-1 border"
-              src={col_View === false ? grid_row_filled_icon : grid_row_icon}
-              alt="grid_cols"
-            />
+          <div className="flex gap-2">
+            <div className="flex border">
+              <img
+                onClick={() => setDetailsView(true)}
+                className="w-7 h-7 m-1 border"
+                src={
+                  detailsView === true
+                    ? detail_grid_3x3l_filled
+                    : detail_grid_3x3l
+                }
+                alt="detail_grid"
+              />
+              <img
+                onClick={() => setDetailsView(false)}
+                className="w-7 h-7 m-1 border"
+                src={
+                  detailsView === false ? detail_grid_24_filled : detail_grid_24
+                }
+                alt="detail_grid"
+              />
+            </div>
+            <div className="flex border">
+              <img
+                onClick={() => setCol_View(true)}
+                className="w-7 h-7 m-1 border"
+                src={col_View === true ? grid_col_filled_icon : grid_col_icon}
+                alt="grid_cols"
+              />
+              <img
+                onClick={() => setCol_View(false)}
+                className="w-7 h-7 m-1 border"
+                src={col_View === false ? grid_row_filled_icon : grid_row_icon}
+                alt="grid_cols"
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -45,8 +45,7 @@ const NavigationBar = () => {
             alt=""
           />
           <span className="text-2xl font-medium font-poppins">
-            <span className="text-black">StyleBlend.</span>
-            <span className="text-zinc-500 lg:pl-30"></span>
+            <Link to="/" className="text-black">StyleBlend.</Link>
           </span>
           <div className="w-full flex justify-center align-middle gap-5 lg:gap-10">
             <Link
@@ -68,7 +67,7 @@ const NavigationBar = () => {
               Product
             </Link>
             <Link
-              to="/contactus"
+              to="/contact"
               className="hidden md:block  text-zinc-500 text-sm font-medium font-space-grotesk leading-normal"
             >
               Contact Us
@@ -181,7 +180,7 @@ const NavigationBar = () => {
             <div className="h-10 pb-2 border-b border-gray-200 flex-col justify-start items-start gap-2.5 flex">
               <div className="pb-2 justify-end items-center inline-flex">
                 <Link
-                  to="contactus"
+                  to="contact"
                   className="w-[303px] text-neutral-900 text-sm font-medium font-['Inter'] leading-normal"
                 >
                   Contact Us

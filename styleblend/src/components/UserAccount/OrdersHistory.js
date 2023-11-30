@@ -32,9 +32,12 @@ const OrdersHistory = () => {
           </tr>
         </thead>
         <tbody>
-          {orders.map((order) => {
+          {orders.map((order, index) => {
             return (
-              <tr className="w-full border text-center text-neutral-900 text-sm font-normal font-['Inter'] leading-snug">
+              <tr
+                key={index}
+                className="w-full border text-center text-neutral-900 text-sm font-normal font-['Inter'] leading-snug"
+              >
                 <td className="border">{order.ID}</td>
                 <td className="border">{order.Dates}</td>
                 <td className="border">{order.Status}</td>

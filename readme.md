@@ -83,3 +83,11 @@ npm i bcryptjs
 <!-- secret Or PrivateKey -->
 
 npm i jsonwebtoken
+
+<!-- cloudinary for upload file and images -->
+
+npm install cloudinary
+
+<!-- middleware for handling multipart / form-data -->
+
+npm i multer

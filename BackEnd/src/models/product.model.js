@@ -2,10 +2,6 @@ import mongoose, { Schema } from "mongoose";
 
 const productSchema = new Schema(
   {
-    id: {
-      type: String,
-      required: true,
-    },
     name: {
       type: String,
       required: true,
@@ -14,12 +10,10 @@ const productSchema = new Schema(
       type: String,
       required: true,
     },
-    productImages: [
-      {
-        type: String,
-        required: true,
-      },
-    ],
+    productImage: {
+      type: String, // cloudinery url
+      required: true,
+    },
     mrp: {
       type: Number,
       required: true,
@@ -30,26 +24,33 @@ const productSchema = new Schema(
       required: true,
       default: 100,
     },
-    brand: {
-      type: String,
-      required: true,
-    },
-    category: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Category",
-      required: true,
-    },
-    colors: {
-      type: String,
-      required: true,
-    },
-    sizes: {
-      type: String,
-      required: true,
-    },
+    // brand: {
+    //   type: String,
+    //   required: true,
+    // },
+    // category: {
+    //   type: mongoose.Schema.Types.ObjectId,
+    //   ref: "Category",
+    //   required: true,
+    // },
+    colors: [
+      {
+        type: String,
+        required: true,
+        enum: ["Red", "Black", "Green", "Yellow", "Gray"],
+      },
+    ],
+    sizes: [
+      {
+        type: String,
+        required: true,
+        enum: ["Small", "Medium", "Large"],
+      },
+    ],
     stock: {
-      type: String,
+      type: Number,
       required: true,
+      default: 0,
     },
     rating: {
       type: Number,

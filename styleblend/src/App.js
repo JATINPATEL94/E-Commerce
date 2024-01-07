@@ -9,8 +9,23 @@ import Shop from "./components/Shop";
 import ProductPage from "./components/ProductPage";
 import UserAccount from "./components/UserAccount";
 import Contact from "./components/Contact";
+import Shery from "sheryjs";
 
 function App() {
+  Shery.mouseFollower({
+    skew: true,
+    ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+    duration: 1,
+  });
+
+  Shery.imageMasker("#images", {
+    //Parameters are optional.
+    mouseFollower: true,
+    text: "StyleBlend.",
+    ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+    duration: 1,
+  });
+
   return (
     <Router>
       <div className="font-sans overflow-x-hidden">
@@ -21,7 +36,7 @@ function App() {
           <Route path="/shop" element={<Shop />} />
           <Route path="/product" element={<ProductPage />} />
           <Route path="/useraccount" element={<UserAccount />} />
-          <Route path="/Contact" element={<Contact/>} />
+          <Route path="/Contact" element={<Contact />} />
         </Routes>
         <Values />
         <Footer />

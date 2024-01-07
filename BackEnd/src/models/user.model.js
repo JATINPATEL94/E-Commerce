@@ -14,31 +14,37 @@ const userSchema = new Schema(
       required: true,
       unique: true,
       lowercase: true,
+      match: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
     },
     password: {
       type: String,
       required: true,
     },
-    likeProducts: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Product",
-      },
-    ],
+    avatar: {
+      type: String, // cloudinery url
+      required: true,
+    },
+    refreshToken: {
+      type: String,
+    },
   },
   { timestamps: true }
 );
 
 // encrypt password
 userSchema.pre("save", async function (next) {
-  if (this.isModified("password")) {
-    this.password = await bcryptjs.hash(this.password, 10);
+  try {
+    if (this.isModified("password")) {
+      this.password = await bcryptjs.hash(this.password, 10);
+    }
+    return next();
+  } catch (error) {
+    return next(error);
   }
-  return next();
 });
 
 // decrypt password
-userSchema.methods.isPasseordCorreect = async function (password) {
+userSchema.methods.isPasswordCorrect = async function (password) {
   return await bcryptjs.compare(password, this.password);
 };
 

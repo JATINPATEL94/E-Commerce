@@ -5,7 +5,7 @@ const asyncHandler = (requestHandler) => {
     } catch (error) {
       res.status(error.code || 500).json({
         success: false,
-        massage: error.massage,
+        message: error.message,
       });
     }
   };

@@ -2,10 +2,18 @@ import mongoose, { Schema } from "mongoose";
 
 const addressSchema = new Schema(
   {
-    label: {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      require: true,
+    },
+    fullName: {
       type: String,
       required: true,
-      default: "Home",
+    },
+    mobileNumber: {
+      type: String,
+      required: true,
     },
     building: {
       type: String,
@@ -23,17 +31,13 @@ const addressSchema = new Schema(
       type: String,
       required: true,
     },
-    zipCode: {
+    pinCode: {
       type: String,
       required: true,
     },
     country: {
       type: String,
       required: true,
-    },
-    isDefault: {
-      type: Boolean,
-      default: false,
     },
   },
   { timestamps: true }

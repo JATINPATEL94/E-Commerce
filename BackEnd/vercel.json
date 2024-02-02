@@ -3,7 +3,7 @@
   "name": "backend-styleblend",
   "builds": [{ "src": "*.js", "use": "@vercel/node" }],
   "routes": [
-    { "src": "/api/.*", "dest": "/api/index.js" },
+    { "src": "/api/.*", "dest": "/src/index.js" },
     { "src": "/*", "dest": "/index.js" }
   ]
 }

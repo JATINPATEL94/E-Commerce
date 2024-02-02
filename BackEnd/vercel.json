@@ -3,7 +3,7 @@
   "name": "backend-styleblend",
   "builds": [
     {
-      "src": "src/**/*.js",
+      "src": "src/controllers/product.controller.js",
       "use": "@vercel/node"
     }
   ],

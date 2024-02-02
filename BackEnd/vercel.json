@@ -10,8 +10,5 @@
   "routes": [
     { "src": "/api/.*", "dest": "/src/app.js" },
     { "src": "/(.*)", "dest": "/src/index.js" }
-  ],
-  "env": {
-    "MONGODB_URI": "@your-mongodb-uri"
-  }
+  ]
 }

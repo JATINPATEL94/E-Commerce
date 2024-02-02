@@ -1,9 +1,17 @@
 {
   "version": 2,
   "name": "backend-styleblend",
-  "builds": [{ "src": "*.js", "use": "@vercel/node" }],
+  "builds": [
+    {
+      "src": "src/**/*.js",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
-    { "src": "/api/.*", "dest": "/src/index.js" },
-    { "src": "/*", "dest": "/index.js" }
-  ]
+    { "src": "/api/.*", "dest": "/src/app.js" },
+    { "src": "/(.*)", "dest": "/src/index.js" }
+  ],
+  "env": {
+    "MONGODB_URI": "@your-mongodb-uri"
+  }
 }

@@ -34,8 +34,7 @@ const ApiHandler = async (
   body = null,
   login = true
 ) => {
-  const API_URL =
-    "https://styleblend-ldvoqy2rc-jatinpatel-3s-projects.vercel.app/api/v1";
+  const API_URL = "https://styleblend.vercel.app/api/v1";
   const url = `${API_URL}${endpoint}`;
 
   const options = {

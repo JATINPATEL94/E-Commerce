@@ -541,7 +541,7 @@ const getAllLikeProducts = asyncHandler(async (req, res) => {
     );
 }); //** User **//
 
-export default {
+export {
   getAllProducts,
   serchProducts,
   addNewProduct,

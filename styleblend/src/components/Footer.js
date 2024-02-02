@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import instagram_icon from "../images/Icons/Navbar_icons/instagram.svg";
-import facebook_icon from "../images/Icons/Navbar_icons/facebook.svg";
-import youtube_icon from "../images/Icons/Navbar_icons/youtube.svg";
+import linkedin_icon from "../images/Icons/Navbar_icons/linkedin.svg";
+import email_icon from "../images/Icons/Navbar_icons/email.svg";
 
 const Footer = () => {
   return (
@@ -21,56 +22,77 @@ const Footer = () => {
             </div>
             <div className="w-px h-6 bg-zinc-500" />
             <div className="text-gray-200 text-sm font-normal  leading-snug">
-              Gift & Decoration Store
+              Clothing And Fashion Wear Store
             </div>
           </div>
           <div className="justify-end items-end gap-5 lg:gap-10 flex">
-            <div className="text-white text-sm font-normal leading-snug">
+            <Link
+              to="/"
+              className="text-white text-sm font-normal leading-snug"
+            >
               Home
-            </div>
-            <div className="text-white text-sm font-normal leading-snug">
+            </Link>
+            <Link
+              to="/shop"
+              className="text-white text-sm font-normal leading-snug"
+            >
               Shop
-            </div>
-            <div className="text-white text-sm font-normal leading-snug">
+            </Link>
+            <Link
+              to="/product"
+              className="text-white text-sm font-normal leading-snug"
+            >
               Product
-            </div>
-            <div className="text-white text-sm font-normal leading-snug">
-              Blog
-            </div>
-            <div className="text-white text-sm font-normal leading-snug">
+            </Link>
+            <Link
+              to="contact"
+              className="text-white text-sm font-normal leading-snug"
+            >
               Contact Us
-            </div>
+            </Link>
           </div>
         </div>
       </div>
       <div className="w-full py-4 border-t border-zinc-500 justify-between items-center flex">
         <div className="gap-7 lg:gap-10 flex">
           <div className="text-gray-200 text-xs font-normal font-['Poppins'] leading-tight">
-            Copyright © 2023 StyleBlend. All rights reserved
+            Copyright © 2024 StyleBlend. All rights reserved
           </div>
-          <div className=" text-white text-xs font-semibold font-['Poppins'] leading-tight">
+          <Link
+            to="/"
+            className=" text-white text-xs font-semibold font-['Poppins'] leading-tight"
+          >
             Privacy Policy
-          </div>
-          <div className="text-white text-xs font-semibold font-['Poppins'] leading-tight">
+          </Link>
+          <Link
+            to="/"
+            className="text-white text-xs font-semibold font-['Poppins'] leading-tight"
+          >
             Terms of Use
-          </div>
+          </Link>
         </div>
         <div className="flex gap-5 lg:gap-14">
-          <img
-            className="w-5 h-5 border border-white rounded-full"
-            src={instagram_icon}
-            alt=""
-          />
-          <img
-            className="w-5 h-5 border border-white rounded-full"
-            src={facebook_icon}
-            alt=""
-          />
-          <img
-            className="w-5 h-5 border border-white rounded-full"
-            src={youtube_icon}
-            alt=""
-          />
+          <a href="https://www.instagram.com/jatin_patel_94/" target="blank">
+            <img
+              className="w-8 h-8 p-1 border bg-white border-white rounded-full"
+              src={instagram_icon}
+              alt=""
+            />
+          </a>
+          <a href="https://www.linkedin.com/in/patel-jatin-/" target="blank">
+            <img
+              className="w-8 h-8 p-1 border bg-white border-white rounded-full"
+              src={linkedin_icon}
+              alt=""
+            />
+          </a>
+          <a href="mailto:jatin.patel1355@gmail.com">
+            <img
+              className="w-8 h-8 p-1 border bg-white border-white rounded-full"
+              src={email_icon}
+              alt=""
+            />
+          </a>
         </div>
       </div>
     </div>

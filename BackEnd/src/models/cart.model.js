@@ -19,6 +19,16 @@ const cartSchema = new Schema(
           type: Number,
           default: 1,
         },
+        sizes: {
+          type: String,
+          required: true,
+          enum: ["Small", "Medium", "Large"],
+        },
+        colors: {
+          type: String,
+          required: true,
+          enum: ["Red", "Black", "Green", "Yellow", "Gray"],
+        },
         totalMRP: {
           type: Number,
           default: 0,
@@ -29,11 +39,11 @@ const cartSchema = new Schema(
         },
       },
     ],
-    totalMRP: {
+    subTotalMRP: {
       type: Number,
       default: 0,
     },
-    total: {
+    subTotal: {
       type: Number,
       default: 0,
     },
@@ -47,8 +57,8 @@ cartSchema.pre("save", async function (next) {
     const cart = this;
 
     // Calculate totalMRP and total based on items in the cart
-    cart.totalMRP = 0;
-    cart.total = 0;
+    cart.subTotalMRP = 0;
+    cart.subTotal = 0;
 
     for (const item of cart.items) {
       const product = await Product.findById(item.productId);
@@ -57,8 +67,8 @@ cartSchema.pre("save", async function (next) {
         item.totalMRP = product.mrp * item.quantity;
         item.total = product.price * item.quantity;
 
-        cart.totalMRP += item.totalMRP;
-        cart.total += item.total;
+        cart.subTotalMRP += item.totalMRP;
+        cart.subTotal += item.total;
       }
     }
 

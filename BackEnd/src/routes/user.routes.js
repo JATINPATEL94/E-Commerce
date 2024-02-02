@@ -8,6 +8,7 @@ import {
   updateAccountDetails,
   updateUserAvatar,
   updateUserAddress,
+  getFullUserDetails,
 } from "../controllers/user.controller.js";
 import { upload } from "../middlewares/multer.middleware.js";
 import { verifyjwt } from "../middlewares/auth.middleware.js";
@@ -22,14 +23,14 @@ router.route("/register").post(
     },
   ]),
   registerUser
-);
+); //Non-Auth
 
-router.route("/login").post(loginUser);
+router.route("/login").post(loginUser); //Non-Auth
 
 // Secured Routes //
-router.route("/logout").post(verifyjwt, logoutUser);
+router.route("/refreshtoken").post(refreshAccessToken);
 
-router.route("refresh-token").post(refreshAccessToken);
+router.route("/logout").post(verifyjwt, logoutUser);
 
 router.route("/changePassword").post(verifyjwt, changeCurrentPassword);
 
@@ -40,5 +41,7 @@ router
   .patch(verifyjwt, upload.single("avatar"), updateUserAvatar);
 
 router.route("/updateUserAddress").patch(verifyjwt, updateUserAddress);
+
+router.route("/getFullUserDetails").get(verifyjwt, getFullUserDetails);
 
 export default router;

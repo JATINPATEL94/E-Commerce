@@ -1,12 +1,12 @@
 import React from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import store02_icon from "../images/Icons/Contact_icons/store 02.png";
 import call_icon from "../images/Icons/Contact_icons/call.png";
 import mail_icon from "../images/Icons/Contact_icons/mail.png";
-import store01_icon from "../images/Icons/Contact_icons/store 01.png";
-import Subtract_icon from "../images/Icons/Contact_icons/Subtract.png";
-import map from "../images/Icons/Contact_icons/map.png";
 
 const Contact = () => {
+  const [stateEmail, handleSubmitEmail] = useForm("myyrkzwg");
+
   return (
     <div className="w-full h-full px-8 lg:px-40 flex-col justify-start items-start gap-10 inline-flex">
       <div className="self-stretch text-center text-neutral-900 text-[40px] font-medium font-['Poppins'] leading-[44px]">
@@ -59,90 +59,105 @@ const Contact = () => {
         </div>
       </div>
       {/* bottom part */}
-      <div className="w-full h-full justify-between grid grid-cols-1 md:grid-cols-2">
+      <div className="w-full h-full gap-4 justify-between grid grid-cols-1 md:grid-cols-2">
         {/* Contact form */}
-        <form className="w-full h-full py-8 px-4 flex-col justify-center items-center align-middle gap-6 inline-flex">
-          {/* Full Name */}
-          <div className="h-16 w-full flex-col justify-start items-start gap-3 flex">
-            <label
-              htmlFor="Full_Name"
-              className="text-zinc-500 text-xs font-bold font-['Inter'] uppercase leading-3"
-            >
-              Full Name
-            </label>
-            <input
-              type="text"
-              name="Full_Name"
-              id="Full_Name"
-              minLength={3}
-              className="h-10 px-4 w-full bg-white rounded-md border border-stone-300 text-zinc-500 text-base font-normal font-['Inter'] leading-relaxed"
-              placeholder="Full Name"
-            />
-          </div>
-          {/* email */}
-          <div className="h-16 w-full flex-col justify-start items-start gap-3 flex">
-            <label
-              htmlFor="Email"
-              className="text-zinc-500 text-xs font-bold font-['Inter'] uppercase leading-3"
-            >
-              Email
-            </label>
-            <input
-              type="Email"
-              name="Email"
-              id="Email"
-              minLength={3}
-              className="h-10 px-4 w-full bg-white rounded-md border border-stone-300 text-zinc-500 text-base font-normal font-['Inter'] leading-relaxed"
-              placeholder="Email"
-            />
-          </div>
-          {/* Message */}
-          <div className="h-16 w-full flex-col justify-start items-start gap-3 flex">
-            <label
-              htmlFor="Message"
-              className="text-zinc-500 text-xs font-bold font-['Inter'] uppercase leading-3"
-            >
-              Message
-            </label>
-            <textarea
-              rows="4"
-              name="Message"
-              id="Message"
-              minLength={3}
-              className="px-4 w-full bg-white rounded-md border border-stone-300 text-zinc-500 text-base font-normal font-['Inter'] leading-relaxed"
-              placeholder="Message"
-            />
-          </div>
-          {/* Save button */}
-          <button className="w-fit h-10 px-10 py-1.5 bg-neutral-900 rounded-lg justify-center items-center gap-2 inline-flex">
-            <h4 className="text-center text-white text-base font-medium font-['Inter'] leading-7">
-              Send Message
-            </h4>
-          </button>
-        </form>
-        {/* map */}
-        <div src="" className="h-80 md:w-full md:h-full  relative ">
-          <div className="w-full h-full absolute justify-center items-center inline-flex">
-            <img
-              className="w-full h-full object-cover"
-              src={map}
-              alt="Location"
-            />
-          </div>
-          <div className="w-16 h-16 top-[40%] left-[40%] absolute">
-            <div className="w-10 h-10 left-[12px] top-[9.65px] absolute">
-              <img
-                src={Subtract_icon}
-                alt="Subtract icon"
-                className="w-10 h-11 left-0 top-0 absolute "
+        {stateEmail.succeeded ? (
+          <p className="w-full h-80 text-center py-32 font-semibold border">
+            Thanks for joining!
+          </p>
+        ) : (
+          <form
+            onSubmit={handleSubmitEmail}
+            className="w-full h-full py-8 px-4 flex-col justify-center items-center align-middle gap-6 inline-flex"
+          >
+            {/* Full Name */}
+            <div className="h-16 w-full flex-col justify-start items-start gap-3 flex">
+              <label
+                htmlFor="Full_Name"
+                className="text-zinc-500 text-xs font-bold font-['Inter'] uppercase leading-3"
+              >
+                Full Name
+              </label>
+              <input
+                type="text"
+                name="Full_Name"
+                id="Full_Name"
+                minLength={3}
+                className="h-10 px-4 w-full bg-white rounded-md border border-stone-300 text-zinc-500 text-base font-normal font-['Inter'] leading-relaxed"
+                placeholder="Full Name"
               />
-              <img
-                src={store01_icon}
-                alt="store01 icon"
-                className="w-5 h-5 left-[10px] top-2 bg-black absolute"
+              <ValidationError
+                prefix="Full_Name"
+                field="Full_Name"
+                errors={stateEmail.errors}
               />
             </div>
-          </div>
+            {/* email */}
+            <div className="h-16 w-full flex-col justify-start items-start gap-3 flex">
+              <label
+                htmlFor="Email"
+                className="text-zinc-500 text-xs font-bold font-['Inter'] uppercase leading-3"
+              >
+                Email
+              </label>
+              <input
+                type="Email"
+                name="Email"
+                id="Email"
+                minLength={3}
+                className="h-10 px-4 w-full bg-white rounded-md border border-stone-300 text-zinc-500 text-base font-normal font-['Inter'] leading-relaxed"
+                placeholder="Email"
+              />
+              <ValidationError
+                prefix="Email"
+                field="Email"
+                errors={stateEmail.errors}
+              />
+            </div>
+            {/* Message */}
+            <div className="h-16 w-full flex-col justify-start items-start gap-3 flex">
+              <label
+                htmlFor="Message"
+                className="text-zinc-500 text-xs font-bold font-['Inter'] uppercase leading-3"
+              >
+                Message
+              </label>
+              <textarea
+                rows="4"
+                name="Message"
+                id="Message"
+                minLength={3}
+                className="px-4 w-full bg-white rounded-md border border-stone-300 text-zinc-500 text-base font-normal font-['Inter'] leading-relaxed"
+                placeholder="Message"
+              />
+              <ValidationError
+                prefix="Message"
+                field="Message"
+                errors={stateEmail.errors}
+              />
+            </div>
+            {/* Save button */}
+            <button
+              className="w-fit h-10 px-10 py-1.5 bg-neutral-900 rounded-lg justify-center items-center gap-2 inline-flex text-center text-white text-base font-medium font-['Inter'] leading-7"
+              type="submit"
+              disabled={stateEmail.submitting}
+            >
+              Send Email
+            </button>
+          </form>
+        )}
+        {/* map */}
+        <div src="" className="h-80 md:w-full md:h-full  relative ">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d916.5117726185117!2d72.48684891824244!3d23.241373409675788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c25d9e6595ae7%3A0xfc09ee49c810df0!2sWhite%20House!5e0!3m2!1sen!2sin!4v1705992948038!5m2!1sen!2sin"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="map"
+            width={"100%"}
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+          ></iframe>
         </div>
       </div>
     </div>

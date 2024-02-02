@@ -37,6 +37,7 @@ const productSchema = new Schema(
       {
         type: String,
         required: true,
+        default: ["Red", "Black", "Green", "Yellow", "Gray"],
         enum: ["Red", "Black", "Green", "Yellow", "Gray"],
       },
     ],
@@ -44,6 +45,7 @@ const productSchema = new Schema(
       {
         type: String,
         required: true,
+        default: ["Small", "Medium", "Large"],
         enum: ["Small", "Medium", "Large"],
       },
     ],
@@ -56,6 +58,11 @@ const productSchema = new Schema(
       type: Number,
       required: true,
       default: 1,
+    },
+    category: {
+      type: String,
+      default: "T-Shirt",
+      required: true,
     },
   },
   { timestamps: true }

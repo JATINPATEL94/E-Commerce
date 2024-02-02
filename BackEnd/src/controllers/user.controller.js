@@ -51,7 +51,7 @@ const registerUser = asyncHandler(async (req, res) => {
   if (!avatarLocalPath) {
     throw new ApiError(400, "Add Avatar");
   }
-  const avatar = await uploadOnCloudinary(avatarLocalPath); // call cloudinary utils
+  const avatar = await uploadOnCloudinary(avatarLocalPath, true); // call cloudinary utils
   if (!avatar.url) {
     throw new ApiError(400, "Error While Avatar File is Uploading");
   }
@@ -72,11 +72,30 @@ const registerUser = asyncHandler(async (req, res) => {
     throw new ApiError(500, "Someing Went Wrong While Registering The User");
   }
 
+  // access and referesh token
+  const { accessToken, refreshToken } = await generateAccessAndRefreshTokens(
+    user._id
+  );
+
+  // send cookie
+  const options = {
+    httpOnly: true,
+    secure: false,
+  };
+
   // return response
   return res
-    .status(201)
-    .json(new ApiResponse(200, createdUser, "User Registerd Successfully"));
-});
+    .status(202)
+    .cookie("accessToken", accessToken, options)
+    .cookie("refreshToken", refreshToken, options)
+    .json(
+      new ApiResponse(
+        200,
+        { createdUser, accessToken, refreshToken },
+        "User Registerd Successfully"
+      )
+    );
+}); //** Non-Auth **//
 
 const loginUser = asyncHandler(async (req, res) => {
   // get user data from request body
@@ -125,16 +144,16 @@ const loginUser = asyncHandler(async (req, res) => {
     .json(
       new ApiResponse(
         200,
-        { user: loginUser, accessToken, refreshToken },
+        { user: loggedinUser, accessToken, refreshToken },
         "User Logged In Successfully"
       )
     );
-});
+}); //** Non-Auth **//
 
 const logoutUser = asyncHandler(async (req, res) => {
   // clear accessToken
   await User.findByIdAndUpdate(
-    req.user._id,
+    req.user?._id,
     {
       // req.user._id is from auth.middleware as verifyjwt
       $set: {
@@ -150,18 +169,16 @@ const logoutUser = asyncHandler(async (req, res) => {
     httpOnly: true,
     secure: true,
   };
-
   // clear Cookies
   return res
     .status(200)
     .clearCookie("accessToken", options)
     .clearCookie("refreshToken", options)
-    .json(new ApiResponse(200, {}, "User Logged Out"));
+    .json(new ApiResponse(200, {}, "User Logged Out Successfully"));
 });
 
 const refreshAccessToken = asyncHandler(async (req, res) => {
-  const oldRefreshToken = req.cookie.refreshToken || req.body.refreshToken;
-
+  const oldRefreshToken = req.cookies.refreshToken || req.body.refreshToken;
   if (!oldRefreshToken) {
     throw new ApiError(401, "Unauthorized Request");
   }
@@ -209,10 +226,23 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
 const changeCurrentPassword = asyncHandler(async (req, res) => {
   const { oldPassword, newPassword, confirmPassword } = req.body;
 
+  //  password validation
+  if (
+    [oldPassword, newPassword, confirmPassword].some((field) => {
+      return field.trim() === "";
+    })
+  ) {
+    throw new ApiError(400, "Old , New  And ConfirmPassword Are Required");
+  }
+
   const user = await User.findById(req.user?._id); // get user from auth.middleware.js
 
   if (!(newPassword === confirmPassword)) {
     throw new ApiError(400, "New Password And Confirm Password is Not Same");
+  }
+
+  if (oldPassword === newPassword) {
+    throw new ApiError(400, "OldPassword And New Password is Same");
   }
 
   const isPasswordCorrect = await user.isPasswordCorrect(oldPassword);
@@ -235,7 +265,7 @@ const updateAccountDetails = asyncHandler(async (req, res) => {
 
   // Cheak Enter Email id Allready Exist or Not
   const existedUser = await User.findOne({ email });
-  if (existedUser) {
+  if (existedUser._id.toString() !== req.user?._id.toString()) {
     throw new ApiError(
       409,
       "This Email Already Exist. Please Enter Other Email Id"
@@ -341,6 +371,56 @@ const updateUserAddress = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, updatedAddress, "Address Update Successfully."));
 });
 
+const getFullUserDetails = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.user?._id).select(
+    "username email avatar"
+  );
+  if (!user) {
+    throw new ApiError(404, "Error Occurred when Get User Details");
+  }
+
+  const userAddress = await Address.findById(req.user?._id).select(
+    "-createdAt -updatedAt -_id -__v"
+  );
+
+  const { username, email, avatar } = user;
+
+  const {
+    fullName,
+    mobileNumber,
+    building,
+    street,
+    city,
+    state,
+    pinCode,
+    country,
+  } = userAddress ? userAddress : {};
+
+  const fullUserDetails = {
+    username,
+    email,
+    avatar,
+    fullName,
+    mobileNumber,
+    building,
+    street,
+    city,
+    state,
+    pinCode,
+    country,
+  };
+
+  return res
+    .status(200)
+    .json(
+      new ApiResponse(
+        200,
+        fullUserDetails,
+        "Full User details Get Successfully"
+      )
+    );
+});
+
 export {
   registerUser,
   loginUser,
@@ -350,4 +430,5 @@ export {
   updateAccountDetails,
   updateUserAvatar,
   updateUserAddress,
+  getFullUserDetails,
 };

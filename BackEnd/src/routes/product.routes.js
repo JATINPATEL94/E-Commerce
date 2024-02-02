@@ -1,6 +1,7 @@
 import { Router } from "express";
 import {
   getAllProducts,
+  serchProducts,
   addNewProduct,
   updateProduct,
   deleteProduct,
@@ -10,7 +11,6 @@ import {
   updateCartQuantity,
   addToLikeProducts,
   getAllLikeProducts,
-  removeLikeProduct,
 } from "../controllers/product.controller.js";
 import { verifyjwt } from "../middlewares/auth.middleware.js";
 import { isAdmin } from "../middlewares/admin .middleware.js";
@@ -18,10 +18,15 @@ import { upload } from "../middlewares/multer.middleware.js";
 
 const router = Router();
 
+//> Non-Auth Routes <//
+
 // Product
 router.route("/getAllProducts").get(getAllProducts);
 
-// Secured Routes //
+router.route("/serchProducts").get(serchProducts);
+
+//> Secured Routes <//
+
 // Product  **Admin**
 router
   .route("/addNewProduct")
@@ -46,7 +51,5 @@ router.route("/updateCartQuantity").patch(verifyjwt, updateCartQuantity);
 router.route("/addToLikeProducts").post(verifyjwt, addToLikeProducts);
 
 router.route("/getAllLikeProducts").get(verifyjwt, getAllLikeProducts);
-
-router.route("/removeLikeProduct").delete(verifyjwt, removeLikeProduct);
 
 export default router;

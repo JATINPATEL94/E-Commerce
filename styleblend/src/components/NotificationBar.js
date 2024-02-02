@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import close_icon from "../images/Icons/close.svg";
 import ticket from "../images/Icons/ticket-percent.svg";
@@ -23,9 +24,12 @@ const NotificationBar = () => {
           </div>
         </div>
         <div className="hidden md:flex items-center gap-1 border-b border-blue-500">
-          <div className="text-sm font-medium leading-normal text-blue-500">
+          <Link
+            to="/shop"
+            className="text-sm font-medium leading-normal text-blue-500"
+          >
             Shop Now
-          </div>
+          </Link>
           <img className="w-18 h-18 relative" src={arrow} alt="" />
         </div>
       </div>

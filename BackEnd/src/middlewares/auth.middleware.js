@@ -28,6 +28,6 @@ export const verifyjwt = asyncHandler(async (req, res, next) => {
     req.user = user;
     next();
   } catch (error) {
-    throw new ApiError(401, error.message || "Invalid Access Token");
+    throw new ApiError(401, "Invalid Access Please Login First");
   }
 });

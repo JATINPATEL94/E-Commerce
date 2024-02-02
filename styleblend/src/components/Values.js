@@ -8,7 +8,7 @@ const Values = () => {
   return (
     <div className=" h-full px-8 lg:px-32 py-8 lg:py-12 gap-6 justify-between items-center align-middle lg:flex">
       <div className="w-full h-full flex align-middle justify-center gap-6">
-        <div className="bg-gray-100 w-1/2 px-4 lg:px-8 py-8 lg:py-12">
+        <div className="bg-gray-100 w-1/2 px-4 lg:px-8 py-8 lg:py-12 text-target">
           <div className="mb-4">
             <img src={fast_delivery_icon} alt="Free Shipping" />
           </div>
@@ -21,7 +21,7 @@ const Values = () => {
             </h6>
           </div>
         </div>
-        <div className="bg-gray-100 w-1/2 px-4 lg:px-8 py-8 lg:py-12">
+        <div className="bg-gray-100 w-1/2 px-4 lg:px-8 py-8 lg:py-12 text-target">
           <div className="mb-4">
             <img src={money_icon} alt="Money-back" />
           </div>
@@ -36,7 +36,7 @@ const Values = () => {
         </div>
       </div>
       <div className="w-full h-full flex align-middle justify-center gap-6 mt-6 lg:mt-0">
-        <div className="bg-gray-100 w-1/2 px-4 lg:px-8 py-8 lg:py-12">
+        <div className="bg-gray-100 w-1/2 px-4 lg:px-8 py-8 lg:py-12 text-target">
           <div className="mb-4">
             <img src={lock_icon} alt="Secure Payments" />
           </div>
@@ -49,7 +49,7 @@ const Values = () => {
             </h6>
           </div>
         </div>
-        <div className="bg-gray-100 w-1/2 px-4 lg:px-8 py-8 lg:py-12">
+        <div className="bg-gray-100 w-1/2 px-4 lg:px-8 py-8 lg:py-12 text-target">
           <div className="mb-4">
             <img src={call_icon} alt="24/7 Support" />
           </div>

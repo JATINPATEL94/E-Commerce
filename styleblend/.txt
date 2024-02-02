@@ -1,0 +1,377 @@
+[
+  {
+    "name": "Stylish Checkered Shirt",
+    "description": "A trendy checkered shirt with a modern design. Perfect for casual and formal occasions.",
+    "productImage": "image_url_here",
+    "mrp": "1200",
+    "price": "800",
+    "colors": "Red, Black, Green, Yellow, Gray",
+    "sizes": "Small, Medium, Large",
+    "stock": "10",
+    "rating": "4.5",
+    "category": "Shirts"
+  },
+  {
+    "name": "Slim Fit Jeans",
+    "description": "A pair of slim fit jeans that accentuate your figure. Made with high-quality denim for comfort and style.",
+    "productImage": "image_url_here",
+    "mrp": "1400",
+    "price": "900",
+    "colors": "Blue, Black, Gray",
+    "sizes": "Small, Medium, Large",
+    "stock": "15",
+    "rating": "4.2",
+    "category": "Jeans"
+  },
+  {
+    "name": "Faux Leather Jacket",
+    "description": "A stylish faux leather jacket with a unique design. Perfect for adding an edgy touch to any outfit.",
+    "productImage": "image_url_here",
+    "mrp": "1500",
+    "price": "1000",
+    "colors": "Black, Brown",
+    "sizes": "Small, Medium, Large",
+    "stock": "8",
+    "rating": "4.7",
+    "category": "Jackets"
+  },
+  {
+    "name": "Hooded Sweatshirt",
+    "description": "A comfortable and cozy hooded sweatshirt with a modern look. Great for staying warm in colder weather.",
+    "productImage": "image_url_here",
+    "mrp": "1000",
+    "price": "600",
+    "colors": "Gray, Black, Blue",
+    "sizes": "Small, Medium, Large",
+    "stock": "12",
+    "rating": "4.3",
+    "category": "Hoody"
+  },
+  {
+    "name": "Cotton T-Shirt",
+    "description": "A classic cotton t-shirt with a simple yet stylish design. Perfect for everyday wear.",
+    "productImage": "image_url_here",
+    "mrp": "800",
+    "price": "500",
+    "colors": "White, Black, Gray",
+    "sizes": "Small, Medium, Large",
+    "stock": "20",
+    "rating": "4.8",
+    "category": "T-Shirts"
+  },
+  {
+    "name": "Floral Print Dress",
+    "description": "A beautiful floral print dress with a feminine and elegant look. Ideal for special occasions and events.",
+    "productImage": "image_url_here",
+    "mrp": "1300",
+    "price": "700",
+    "colors": "Red, Blue, Pink",
+    "sizes": "Small, Medium, Large",
+    "stock": "5",
+    "rating": "4.6",
+    "category": "Dresses"
+  }
+]
+
+[
+  {
+    "name": "Stylish Denim Jeans",
+    "description": "A trendy pair of jeans with a slim fit and distressed design. Perfect for a casual day out.",
+    "mrp": "1250",
+    "price": "899",
+    "stock": "10",
+    "category": "Jeans"
+  },
+  {
+    "name": "Classic White Shirt",
+    "description": "A timeless white shirt with a regular fit and button-down collar. Suitable for both formal and casual occasions.",
+    "mrp": "850",
+    "price": "599",
+    "stock": "15",
+    "category": "Shirts"
+  },
+  {
+    "name": "Warm Winter Jacket",
+    "description": "A cozy jacket with a hood and padded lining. Ideal for staying warm during the colder months.",
+    "mrp": "1400",
+    "price": "999",
+    "stock": "8",
+    "category": "Jackets"
+  },
+  {
+    "name": "Comfy Hooded Sweatshirt",
+    "description": "A comfortable hoodie made of soft cotton fabric. Great for lounging or working out.",
+    "mrp": "1100",
+    "price": "799",
+    "stock": "12",
+    "category": "Hoody"
+  },
+  {
+    "name": "Graphic Print T-Shirt",
+    "description": "A stylish t-shirt with a unique graphic print. Made of high-quality cotton for a comfortable fit.",
+    "mrp": "650",
+    "price": "449",
+    "stock": "20",
+    "category": "T-Shirts"
+  },
+  {
+    "name": "Elegant Black Dress",
+    "description": "A sophisticated black dress with a fitted silhouette and V-neckline. Perfect for special occasions.",
+    "mrp": "1350",
+    "price": "949",
+    "stock": "5",
+    "category": "Dresses"
+  }
+][
+  {
+    "name": "Warm Winter Jacket",
+    "description": "Stay warm and stylish with this warm winter jacket. Made from premium quality material, this jacket is perfect for cold weather. It features a trendy design and is available in multiple colors.",
+    "mrp": "1400",
+    "price": "950",
+    "stock": "20",
+    "category": "Jackets"
+  },
+  {
+    "name": "Comfy Hoody Sweatshirt",
+    "description": "Stay cozy and comfortable with this comfy hoody sweatshirt. Made from soft and warm fabric, this sweatshirt is perfect for lounging or casual outings. It features a stylish design and is available in various sizes.",
+    "mrp": "1100",
+    "price": "750",
+    "stock": "40",
+    "category": "Hoody"
+  },
+  {
+    "name": "Casual T-Shirt",
+    "description": "Add a touch of style to your wardrobe with this casual t-shirt. Made from high-quality fabric, this t-shirt is comfortable and easy to maintain. It is perfect for everyday wear and is available in different colors.",
+    "mrp": "600",
+    "price": "400",
+    "stock": "60",
+    "category": "T-Shirts"
+  },
+  {
+    "name": "Elegant Floral Dress",
+    "description": "Look elegant and feminine with this floral dress. Made from lightweight and breathable fabric, this dress is perfect for summer. It features a beautiful floral print and a flattering silhouette.",
+    "mrp": "1350",
+    "price": "900",
+    "stock": "25",
+    "category": "Dresses"
+  }
+][
+  {
+    "name": "Stylish Leather Jacket",
+    "description": "Add a touch of edginess to your outfit with this stylish leather jacket. Made with genuine leather, this jacket is both fashionable and durable.",
+    "mrp": "1350",
+    "price": "950",
+    "stock": "10",
+    "category": "Jackets"
+  },
+  {
+    "name": "Cozy Hooded Sweatshirt",
+    "description": "Stay warm and comfortable with this cozy hooded sweatshirt. Made with soft fleece fabric, this sweatshirt is perfect for chilly days.",
+    "mrp": "800",
+    "price": "500",
+    "stock": "20",
+    "category": "Hoody"
+  },
+  {
+    "name": "Graphic Print T-Shirt",
+    "description": "Make a statement with this trendy graphic print t-shirt. Made with high-quality cotton, this t-shirt is both stylish and comfortable.",
+    "mrp": "600",
+    "price": "400",
+    "stock": "30",
+    "category": "T-Shirts"
+  },
+  {
+    "name": "Elegant Black Dress",
+    "description": "Look effortlessly chic with this elegant black dress. Made with flowy fabric, this dress is perfect for special occasions.",
+    "mrp": "1200",
+    "price": "900",
+    "stock": "12",
+    "category": "Dresses"
+  },
+  {
+    "name": "Striped Button-Up Shirt",
+    "description": "Stay on-trend with this striped button-up shirt. Made with lightweight fabric, this shirt is perfect for a casual yet stylish look.",
+    "mrp": "850",
+    "price": "550",
+    "stock": "18",
+    "category": "Shirts"
+  },
+  {
+    "name": "Ripped Skinny Jeans",
+    "description": "Get the perfect fit with these ripped skinny jeans. Made with stretchy denim, these jeans are both comfortable and fashionable.",
+    "mrp": "1050",
+    "price": "750",
+    "stock": "22",
+    "category": "Jeans"
+  },
+  {
+    "name": "Quilted Bomber Jacket",
+    "description": "Stay warm and stylish with this quilted bomber jacket. Made with a water-resistant fabric, this jacket is perfect for the colder months.",
+    "mrp": "1400",
+    "price": "1000",
+    "stock": "8",
+    "category": "Jackets"
+  },
+  {
+    "name": "Casual V-Neck T-Shirt",
+    "description": "Keep it casual with this comfortable v-neck t-shirt. Made with soft and breathable fabric, this t-shirt is a wardrobe essential.",
+    "mrp": "500",
+    "price": "350",
+    "stock": "35",
+    "category": "T-Shirts"
+  }
+]
+[
+  {
+    "name": "Stylish Denim Jeans",
+    "description": "These trendy denim jeans are perfect for any occasion. Made with high-quality fabric for a comfortable fit.",
+    "mrp": "1100",
+    "price": "800",
+    "stock": "50",
+    "category": "Jeans"
+  },
+  {
+    "name": "Classic White Shirt",
+    "description": "A timeless white shirt that is a must-have in every wardrobe. Designed with a slim fit for a modern look.",
+    "mrp": "900",
+    "price": "600",
+    "stock": "30",
+    "category": "Shirts"
+  },
+  {
+    "name": "Cozy Hooded Jacket",
+    "description": "Stay warm and stylish with this hooded jacket. Made with a soft and durable material for ultimate comfort.",
+    "mrp": "1400",
+    "price": "1000",
+    "stock": "20",
+    "category": "Jackets"
+  },
+  {
+    "name": "Cotton T-Shirt",
+    "description": "A basic cotton t-shirt that is perfect for everyday wear. Available in various colors and sizes.",
+    "mrp": "600",
+    "price": "400",
+    "stock": "100",
+    "category": "T-Shirts"
+  },
+  {
+    "name": "Elegant Black Dress",
+    "description": "Make a statement with this elegant black dress. Designed with a flattering silhouette for a feminine look.",
+    "mrp": "1500",
+    "price": "1200",
+    "stock": "10",
+    "category": "Dresses"
+  },
+  {
+    "name": "Slim Fit Jeans",
+    "description": "These slim fit jeans are a wardrobe staple. Made with stretchy denim for a comfortable and flattering fit.",
+    "mrp": "1000",
+    "price": "700",
+    "stock": "40",
+    "category": "Jeans"
+  },
+  {
+    "name": "Striped Button-Up Shirt",
+    "description": "Add a touch of sophistication to your outfit with this striped button-up shirt. Perfect for both formal and casual occasions.",
+    "mrp": "800",
+    "price": "550",
+    "stock": "25",
+    "category": "Shirts"
+  },
+  {
+    "name": "Leather Biker Jacket",
+    "description": "Channel your inner rebel with this stylish leather biker jacket. Made with genuine leather for a rugged look.",
+    "mrp": "1300",
+    "price": "900",
+    "stock": "15",
+    "category": "Jackets"
+  },
+  {
+    "name": "Graphic Print T-Shirt",
+    "description": "Make a statement with this graphic print t-shirt. Available in a variety of designs to suit your personal style.",
+    "mrp": "700",
+    "price": "450",
+    "stock": "60",
+    "category": "T-Shirts"
+  },
+  {
+    "name": "Floral Maxi Dress",
+    "description": "Get ready for summer with this beautiful floral maxi dress. Made with lightweight and breathable fabric.",
+    "mrp": "1200",
+    "price": "950",
+    "stock": "5",
+    "category": "Dresses"
+  },
+  {
+    "name": "Ripped Skinny Jeans",
+    "description": "Add a trendy touch to your outfit with these ripped skinny jeans. Made with high-quality denim for long-lasting wear.",
+    "mrp": "950",
+    "price": "650",
+    "stock": "35",
+    "category": "Jeans"
+  },
+  {
+    "name": "Checked Flannel Shirt",
+    "description": "Stay cozy and stylish with this checked flannel shirt. Perfect for layering or wearing on its own.",
+    "mrp": "850",
+    "price": "550",
+    "stock": "20",
+    "category": "Shirts"
+  },
+  {
+    "name": "Puffer Jacket",
+    "description": "Keep warm in style with this puffer jacket. Designed with a removable hood and multiple pockets.",
+    "mrp": "1200",
+    "price": "900",
+    "stock": "10",
+    "category": "Jackets"
+  },
+  {
+    "name": "V-Neck T-Shirt",
+    "description": "A classic v-neck t-shirt that is a wardrobe essential. Made with soft and breathable fabric.",
+    "mrp": "650",
+    "price": "450",
+    "stock": "80",
+    "category": "T-Shirts"
+  },
+  {
+    "name": "Wrap Midi Dress",
+    "description": "Flatter your figure with this wrap midi dress. Perfect for both casual and formal occasions.",
+    "mrp": "1300",
+    "price": "1000",
+    "stock": "15",
+    "category": "Dresses"
+  },
+  {
+    "name": "Straight Leg Jeans",
+    "description": "These straight leg jeans offer a timeless and versatile look. Made with comfortable stretch denim.",
+    "mrp": "900",
+    "price": "650",
+    "stock": "50",
+    "category": "Jeans"
+  },
+  {
+    "name": "Oversized Shirt",
+    "description": "Get a relaxed and effortless look with this oversized shirt. Made with a lightweight and flowy fabric.",
+    "mrp": "750",
+    "price": "500",
+    "stock": "30",
+    "category": "Shirts"
+  },
+  {
+    "name": "Bomber Jacket",
+    "description": "Add a cool and edgy vibe to your outfit with this bomber jacket. Made with a water-resistant material.",
+    "mrp": "1100",
+    "price": "800",
+    "stock": "20",
+    "category": "Jackets"
+  },
+  {
+    "name": "Basic Crew Neck T-Shirt",
+    "description": "A basic crew neck t-shirt that is perfect for everyday wear. Made with soft and durable fabric.",
+    "mrp": "600",
+    "price": "400",
+    "stock": "100",
+    "category": "T-Shirts"
+  }
+]

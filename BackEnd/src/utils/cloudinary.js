@@ -1,5 +1,4 @@
 import { v2 as cloudinary } from "cloudinary";
-import { log } from "console";
 import fs from "fs";
 
 cloudinary.config({
@@ -9,13 +8,14 @@ cloudinary.config({
 });
 
 // Upload File In cloudinary
-const uploadOnCloudinary = async (localFilePath) => {
+const uploadOnCloudinary = async (localFilePath, user = false) => {
   try {
     if (!localFilePath) {
       return null;
     }
     const response = await cloudinary.uploader.upload(localFilePath, {
       resource_type: "auto",
+      folder: user ? "StyleBlend/Users" : "StyleBlend/Products",
     });
     console.log("File Is Uploaded Successfull", response.url);
     return response;

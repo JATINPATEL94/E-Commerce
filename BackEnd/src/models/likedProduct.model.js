@@ -12,6 +12,16 @@ const likedProductSchema = new Schema(
       ref: "Product",
       required: true,
     },
+    sizes: {
+      type: String,
+      required: true,
+      enum: ["Small", "Medium", "Large"],
+    },
+    colors: {
+      type: String,
+      required: true,
+      enum: ["Red", "Black", "Green", "Yellow", "Gray"],
+    },
   },
   { timestamps: true }
 );

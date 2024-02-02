@@ -1,6 +1,6 @@
 import "dotenv/config";
 import connectDB from "./db/db.js";
-import { app } from "./app.js";
+import app from "./app.js";
 import Razorpay from "razorpay";
 
 export const instance = new Razorpay({

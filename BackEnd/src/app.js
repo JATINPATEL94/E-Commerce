@@ -32,4 +32,4 @@ app.use("/api/v1/product", productRouter);
 app.use("/api/v1/payment", paymentRouter);
 app.use("/api/v1/order", orderRouter);
 
-export { app };
+export default app;

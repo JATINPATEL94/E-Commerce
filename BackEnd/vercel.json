@@ -1,6 +1,9 @@
 {
-  "version": 2,
-  "name": "native-server",
-  "builds": [{ "src": "./src/index.js", "use": "@vercel/node" }],
-  "routes": [{ "src": "/(.*)", "dest": "/server.js" }]
-}
+    "version": 2,
+    "name": "backend-styleblend",
+    "builds": [{ "src": "./src/index.js", "use": "@vercel/node" }],
+    "routes": [
+      { "src": "/api", "dest": "/src/index.js" }
+    ]
+  }
+  

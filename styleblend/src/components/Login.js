@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ProductContext from "../context/ProductContext";
 import { showToast } from "../utils/toastHandler.js";
 
@@ -39,7 +39,7 @@ const Login = () => {
         Login
       </h3>
       <p className="text-center py-4">
-        Do Not have an account? <a href="/signup">Sign up</a>
+        Do Not have an account? <Link to="/signup">Sign up</Link>
       </p>
       <form
         className="p-8  align-middle justify-center flex flex-col gap-4"

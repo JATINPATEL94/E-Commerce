@@ -46,8 +46,10 @@ const ApiHandler = async (
       // ...(login ? { Authorization: localStorage.getItem("accessToken") } : {}),
     },
     credentials: login ? "include" : undefined,
+    mode: "cors",
     body: body instanceof FormData ? body : body ? JSON.stringify(body) : null,
   };
+
   try {
     const response = await fetch(url, options);
     const responseData = response.headers
@@ -69,8 +71,7 @@ const ApiHandler = async (
       responseData.message
     );
   } catch (error) {
-    console.error("Error fetching data:", error.message);
-    throw error;
+    throw new ApiError(400, error);
   }
 };
 

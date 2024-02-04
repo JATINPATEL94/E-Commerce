@@ -43,7 +43,9 @@ const ApiHandler = async (
       ...(body instanceof FormData
         ? {}
         : { "Content-Type": "application/json" }),
-      // ...(login ? { Authorization: localStorage.getItem("accessToken") } : {}),
+      "Access-Control-Allow-Origin": "https://styleblend.netlify.app",
+      "Access-Control-Allow-Methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+      "Access-Control-Allow-Credentials": "true",
     },
     credentials: login ? "include" : undefined,
     mode: "cors",

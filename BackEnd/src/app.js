@@ -6,7 +6,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://styleblend.netlify.app",
+    origin: "*",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
     optionsSuccessStatus: 204,

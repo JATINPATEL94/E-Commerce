@@ -43,9 +43,6 @@ const ApiHandler = async (
       ...(body instanceof FormData
         ? {}
         : { "Content-Type": "application/json" }),
-      "Access-Control-Allow-Origin": "https://styleblend.netlify.app",
-      "Access-Control-Allow-Methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-      "Access-Control-Allow-Credentials": "true",
     },
     credentials: login ? "include" : undefined,
     mode: "cors",
@@ -63,7 +60,8 @@ const ApiHandler = async (
     if (!response.ok) {
       throw new ApiError(
         response.status,
-        responseData.message || "Something went wrong"
+        responseData.message || "Something went wrong",
+        responseData.errors || []
       );
     }
 
@@ -73,7 +71,10 @@ const ApiHandler = async (
       responseData.message
     );
   } catch (error) {
-    throw new ApiError(400, error);
+    if (error instanceof ApiError) {
+      throw error;
+    }
+    throw new ApiError(500, "Internal Server Error", [error.message]);
   }
 };
 

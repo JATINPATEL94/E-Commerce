@@ -34,8 +34,8 @@ const ApiHandler = async (
   body = null,
   login = true
 ) => {
-  const API_URL = "https://styleblend.vercel.app/api/v1";
-  const url = `${API_URL}${endpoint}`;
+  const API_Version = "/api/v1";
+  const url = `${API_Version}${endpoint}`;
 
   const options = {
     method,
@@ -43,12 +43,12 @@ const ApiHandler = async (
       ...(body instanceof FormData
         ? {}
         : { "Content-Type": "application/json" }),
+      // ...(login ? { Authorization: localStorage.getItem("accessToken") } : {}),
     },
     credentials: login ? "include" : undefined,
     mode: "cors",
     body: body instanceof FormData ? body : body ? JSON.stringify(body) : null,
   };
-
   try {
     const response = await fetch(url, options);
     const responseData = response.headers
@@ -60,8 +60,7 @@ const ApiHandler = async (
     if (!response.ok) {
       throw new ApiError(
         response.status,
-        responseData.message || "Something went wrong",
-        responseData.errors || []
+        responseData || "Something went wrong"
       );
     }
 
@@ -71,10 +70,8 @@ const ApiHandler = async (
       responseData.message
     );
   } catch (error) {
-    if (error instanceof ApiError) {
-      throw error;
-    }
-    throw new ApiError(500, "Internal Server Error", [error.message]);
+    console.error("Error fetching data:", error);
+    throw error;
   }
 };
 

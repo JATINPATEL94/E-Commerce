@@ -80,7 +80,7 @@ const registerUser = asyncHandler(async (req, res) => {
   // send cookie
   const options = {
     httpOnly: true,
-    secure: false,
+    secure: true,
   };
 
   // return response
@@ -134,7 +134,7 @@ const loginUser = asyncHandler(async (req, res) => {
 
   const options = {
     httpOnly: true,
-    secure: false,
+    secure: true,
   };
 
   return res

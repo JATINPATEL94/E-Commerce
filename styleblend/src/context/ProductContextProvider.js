@@ -123,8 +123,8 @@ const ProductContextProvider = ({ children }) => {
 
       if (response) {
         const { newAccessToken, refreshToken } = response.data;
-        document.cookie = `accessToken=${newAccessToken}; path=/; secure=false;`;
-        document.cookie = `refreshToken=${refreshToken}; path=/; secure=false;`;
+        document.cookie = `accessToken=${newAccessToken}; path=/; secure;`;
+        document.cookie = `refreshToken=${refreshToken}; path=/; secure;`;
         return newAccessToken;
       } else {
         throw new ApiError(
@@ -141,6 +141,7 @@ const ProductContextProvider = ({ children }) => {
   const userStatus = async () => {
     try {
       const accessToken = Cookies.get("accessToken");
+
       if (accessToken) {
         // Checking accessToken expiration Time
         const decodedToken = jwtDecode(accessToken);
@@ -171,6 +172,7 @@ const ProductContextProvider = ({ children }) => {
         }
       } else {
         setIsLogin(false);
+        showToast("Please Login For Better Experience");
       }
     } catch (error) {
       showToast("Error decoding or refreshing token. Please Login");
@@ -182,8 +184,8 @@ const ProductContextProvider = ({ children }) => {
     try {
       const response = await ApiHandler("/users/login", "POST", data, false);
       const { accessToken, refreshToken } = response.data;
-      document.cookie = `accessToken=${accessToken}; path=/; secure=false;`;
-      document.cookie = `refreshToken=${refreshToken}; path=/; secure=false;`;
+      document.cookie = `accessToken=${accessToken}; path=/; secure`;
+      document.cookie = `refreshToken=${refreshToken}; path=/; secure;`;
       await getFullUserDetails();
       await getAllCartProducts();
       await getAllLikeProducts();
@@ -206,8 +208,8 @@ const ProductContextProvider = ({ children }) => {
         false
       );
       const { accessToken, refreshToken } = response.data;
-      document.cookie = `accessToken=${accessToken}; path=/; secure=false;`;
-      document.cookie = `refreshToken=${refreshToken}; path=/; secure=false;`;
+      document.cookie = `accessToken=${accessToken}; path=/; secure;`;
+      document.cookie = `refreshToken=${refreshToken}; path=/; secure;`;
       showToast(response.message);
     } catch (error) {
       throw new ApiError(500, error.message);

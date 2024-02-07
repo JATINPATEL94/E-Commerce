@@ -2,7 +2,6 @@
   "name": "styleblend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://styleblend.vercel.app",
   "dependencies": {
     "@formspree/react": "^2.5.1",
     "@testing-library/jest-dom": "^5.17.0",

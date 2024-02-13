@@ -4,19 +4,14 @@ import cookieParser from "cookie-parser";
 
 const app = express();
 
-// app.use(
-//   cors({
-//     origin: process.env.CORS_ORIGIN,
-//     credentials: true,
-//   })
-// );
-
-const corsOptions = {
-  origin: 'https://styleblend.netlify.app'
-};
-
-app.use(cors(corsOptions));
-
+app.use(
+  cors({
+    origin: "https://styleblend.netlify.app",
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+    // origin: process.env.CORS_ORIGIN,
+    // credentials: true,
+  })
+);
 
 // express configuration
 app.use(express.json({ limit: "15kb" }));

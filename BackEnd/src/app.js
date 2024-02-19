@@ -7,8 +7,10 @@ const app = express();
 // CORS middleware
 app.use(
   cors({
-    origin: "*",
+    origin: process.env.CORS_ORIGIN,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+    allowedHeaders: "Content-type",
+    credentials: true,
   })
 );
 
